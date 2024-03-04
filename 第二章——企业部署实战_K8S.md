@@ -412,6 +412,13 @@ DNS1=10.4.7.11
 
 > **wget**：从网络上自动下载文件的自由工具
 >
+~~~
+#如果wget时报错，
+ cannot verify pkg.cfssl.org's certificate, issued by ‘/C=US/O=Let's Encrypt/CN=R3’
+ Issued certificate has expired. To connect to pkg.cfssl.org insecurely, use `--no-check-certificate'.
+#修复方法为
+sudo yum install -y ca-certificates
+~~~
 > **chmod**：给对应的文件添加权限（[菜鸟教程](https://www.runoob.com/linux/linux-comm-chmod.html)）
 >
 > - **+x**：给当前用户增加可执行该文件的权限
