@@ -277,7 +277,8 @@ flannel原理：添加静态路由（前提条件，必须处在同一网关之�
 
 ~~~
 # 把nginx:curl拉下来，21机器
-~]# docker login docker.io/909336740/nginx:curl
+~]# docker login docker.io
+输入自己的用户名、密码即可
 ~]# docker pull 909336740/nginx:curl
 ~]# docker images|grep curl
 ~]# docker tag 34736e20b17b harbor.od.com/public/nginx:curl
