@@ -523,6 +523,7 @@ certs]# cat ca.pem
 > **daemon.json：**为什么配aliyuncs的环境，是因为默认是连接到外网的，速度比较慢，所以我们可以直接使用国内的阿里云镜像源，当然还有腾讯云等
 >
 > **docker version：**查看docker的版本
+> 如果docker版本超过25，在本章最后一步创建pod时，会报错Failed to inspect image "harbor.od.com/public/nginx:v1.7.9": Id or size of image "harbor.od.com/public/nginx:v1.7.9" is not set
 >
 > **daemon.json解析：**重点说一下这个为什么10.4.7.21机器对应着172.7.21.1/24，这里可以看到10的21对应得是172的21，这样做的好处就是，当你的pod出现问题时，你可以马上定位到是在哪台机器出现的问题，是21还是22还是其它的，这点在生产上非常重要，有时候你的dashboard（后面会安装）宕掉了，你没办法只能去机器找，而这时候你又找不到的时候，你老板会拿你祭天的
 
