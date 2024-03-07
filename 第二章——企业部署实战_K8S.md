@@ -496,6 +496,10 @@ certs]# cat ca.pem
 # 如我们架构图所示，运算节点是21/22机器（没有docker则无法运行pod），运维主机是200机器（没有docker则没办法下载docker存入私有仓库），所以在三台机器安装（21/22/200）
 ~]# curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 # 上面的下载可能网络有问题，需要多试几次，这些部署我已经不同机器试过很多次了
+# 快速安装会安装latest版本，如果docker版本大于25，需要降级至24（已验证24.0.7）
+# 首先停止docker服务，systemctl stop docker.service
+# 然后执行降级命令，yum downgrade --setopt=obsoletes=0 -y docker-ce-24.0.7-1.el7 docker-ce-cli-24.0.7-1.el7 containerd.io
+
 ~]# mkdir -p /data/docker /etc/docker
 # # 注意，172.7.21.1，这里得21是指在hdss7-21得机器，如果是22得机器，就是172.7.22.1，共一处需要改机器名："bip": "172.7.21.1/24"
 ~]# vi /etc/docker/daemon.json
