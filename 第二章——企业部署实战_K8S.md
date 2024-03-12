@@ -619,7 +619,7 @@ server {
     listen       80;
     server_name  harbor.od.com;
 
-    client_max_body_size 1000m;
+    client_max_body_size 10000m;
 
     location / {
         proxy_pass http://127.0.0.1:180;
